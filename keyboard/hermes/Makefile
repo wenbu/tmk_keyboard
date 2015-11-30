@@ -39,7 +39,7 @@
 #----------------------------------------------------------------------------
 
 # Target file name (without extension).
-TARGET = gh60_lufa
+TARGET = hermes
 
 # Directory common source filess exist
 TMK_DIR = ../../tmk_core
@@ -50,8 +50,9 @@ TARGET_DIR = .
 # project specific files
 SRC =	keymap_common.c \
 	matrix.c \
-	backlight.c \
-	led.c
+        led.c
+#        i2c_soft.c 
+#	backlight.c 
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
@@ -110,7 +111,6 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 #   LUFA bootloader  4096
 #   USBaspLoader     2048
 OPT_DEFS += -DBOOTLOADER_SIZE=4096
-
 
 # Build Options
 #   comment out to disable the options.
