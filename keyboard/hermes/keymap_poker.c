@@ -2,22 +2,21 @@
 //#include "backlight.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(A, 1,    2,    3,   4, 5,    NO,   1,  6,   7, 8,    9,   0,    EQL,  \
-           B, QUOT, COMM, DOT, P, Y,    HOME, 2,  F,   G, C,    R,   L,    SLSH, \
-           C, A,    O,    E,   U, I,    END,  3,  D,   H, T,    N,   S,    MINS, \
-           D, SCLN, Q,    J,   K, X,    DEL,  4,  B,   M, W,    V,   Z,    RSFT, \
-           E, LGUI, LALT, NO,     BSPC, SPC,      ENT,    NO,   RALT,RGUI, RCTL )
+    KEYMAP(LCTL, LSFT, GRV,  TAB,  ESC, \
+           LGUI, SCLN, A,    QUOT, 1,   \
+           LALT, Q,    O,    COMM, 2,   \
+           FN2,  J,    E,    DOT,  3,   \
+                 K,    U,    P,    4,   \
+           BSPC, X,    I,    Y,    5,   \
+           SPC,  DEL,  END,  HOME, FN0, \
+                 INS,  PGDN, PGUP, FN1, \
+           ENT,  B,    D,    F,    6,   \
+                 M,    H,    G,    7,   \
+           FN3,  W,    T,    C,    8,   \
+           RALT, V,    N,    R,    9,   \
+           RGUI, Z,    S,    L,    0,   \
+           RCTL, RSFT, MINS, SLSH, EQL  )
 };
-
-/*
-const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(ESC,  1,    2,    3,   4, 5,    FN0,  FN1,  6,   7, 8,    9,   0,    EQL,  \
-           TAB,  QUOT, COMM, DOT, P, Y,    HOME, PGUP, F,   G, C,    R,   L,    SLSH, \
-           GRV,  A,    O,    E,   U, I,    END,  PGDN, D,   H, T,    N,   S,    MINS, \
-           LSFT, SCLN, Q,    J,   K, X,    DEL,  INS,  B,   M, W,    V,   Z,    RSFT, \
-           LCTL, LGUI, LALT, FN2,    BSPC, SPC,        ENT,    FN3, RALT, RGUI, RCTL ),
-};
-*/
 
 enum backlight_action {
     BACKLIGHT_BRIGHTEN,
