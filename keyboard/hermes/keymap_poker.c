@@ -2,11 +2,11 @@
 //#include "backlight.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(A, 1,    2,    3,   4, 5,    FN0,  1,  6,   7, 8,    9,   0,    EQL,  \
+    KEYMAP(A, 1,    2,    3,   4, 5,    NO,   1,  6,   7, 8,    9,   0,    EQL,  \
            B, QUOT, COMM, DOT, P, Y,    HOME, 2,  F,   G, C,    R,   L,    SLSH, \
            C, A,    O,    E,   U, I,    END,  3,  D,   H, T,    N,   S,    MINS, \
            D, SCLN, Q,    J,   K, X,    DEL,  4,  B,   M, W,    V,   Z,    RSFT, \
-           E, LGUI, LALT, FN2,    BSPC, SPC,      ENT,    FN3, RALT, RGUI, RCTL ),	   
+           E, LGUI, LALT, NO,     BSPC, SPC,      ENT,    NO,   RALT,RGUI, RCTL )
 };
 
 /*
