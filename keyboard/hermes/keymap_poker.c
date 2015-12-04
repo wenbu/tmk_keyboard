@@ -1,5 +1,5 @@
 #include "keymap_common.h"
-//#include "backlight.h"
+#include "backlight.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(LCTL, LSFT, GRV,  TAB,  ESC, \
@@ -22,9 +22,6 @@ enum backlight_action {
     BACKLIGHT_BRIGHTEN,
     BACKLIGHT_DIM
 };
-
-void backlight_brighten(void) {}
-void backlight_dim(void) {}
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
     switch (id) {

@@ -17,6 +17,9 @@ void i2c_uninit(void);
 // Start transmission.
 void i2c_start(void);
 
+// Restart transmission.
+void i2c_restart(void);
+
 // Stop this transmission.
 void i2c_stop(void);
 
@@ -24,7 +27,7 @@ void i2c_stop(void);
 uint8_t i2c_send(uint8_t data);
 
 // Send multiple bytes.
-uint8_t i2c_send_data(uint8_t* data, uint8_t len);
+uint8_t i2c_send_data(const uint8_t* data, uint8_t len);
 
 // Read and return one byte. last specifies whether this is the last byte to be read.
 uint8_t i2c_read(uint8_t last);

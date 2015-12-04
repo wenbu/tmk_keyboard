@@ -57,15 +57,7 @@ uint8_t matrix_cols(void)
 
 void matrix_init(void)
 {
-    _delay_ms(1000);
-
-    // pull LED driver pins low for now
-    print("pull SDA, SCL, SDB low\n");
-    DDRF  |=  0b00110001;
-    PORTF &= ~0b00110001;
-
-    print("matrix_init\n");
-//    backlight_init();
+    backlight_init();
 
     // initialize row and col
     unselect_rows();

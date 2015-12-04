@@ -49,10 +49,11 @@ TARGET_DIR = .
 
 # project specific files
 SRC =	keymap_common.c \
-	matrix.c \
-        led.c
-#        i2c_soft.c 
-#	backlight.c 
+		matrix.c \
+        led.c \
+        i2c_soft.c \
+        issi.c \
+        backlight.c 
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
