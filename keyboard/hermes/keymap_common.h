@@ -34,20 +34,11 @@ extern const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
 extern const uint16_t fn_actions[];
 
 #define KEYMAP( \
-    K00, K01, K02, K03, K04, \
-    K10, K11, K12, K13, K14, \
-    K20, K21, K22, K23, K24, \
-    K30, K31, K32, K33, K34, \
-         K41, K42, K43, K44, \
-    K50, K51, K52, K53, K54, \
-    K60, K61, K62, K63, K64, \
-         K71, K72, K73, K74, \
-    K80, K81, K82, K83, K84, \
-         K91, K92, K93, K94, \
-    KA0, KA1, KA2, KA3, KA4, \
-    KB0, KB1, KB2, KB3, KB4, \
-    KC0, KC1, KC2, KC3, KC4, \
-    KD0, KD1, KD2, KD3, KD4  \
+    K04, K14, K24, K34, K44, K54, K64, K74, K84, K94, KA4, KB4, KC4, KD4,  \
+    K03, K13, K23, K33, K43, K53, K63, K73, K83, K93, KA3, KB3, KC3, KD3,  \
+    K02, K12, K22, K32, K42, K52, K62, K72, K82, K92, KA2, KB2, KC2, KD2,  \
+    K01, K11, K21, K31, K41, K51, K61, K71, K81, K91, KA1, KB1, KC1, KD1,  \
+    K00, K10, K20, K30,      K50, K60,      K80,      KA0, KB0, KC0, KD0   \
 ) { \
     { KC_##K00, KC_##K01, KC_##K02, KC_##K03, KC_##K04 }, \
     { KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14 }, \
