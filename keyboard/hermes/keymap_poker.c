@@ -9,7 +9,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            TAB, QUOT,COMM,DOT, P,   Y,   HOME,PGUP,F,   G,   C,   R,   L,   SLSH, \
            GRV, A,   O,   E,   U,   I,   END, PGDN,D,   H,   T,   N,   S,   MINS, \
            LSFT,SCLN,Q,   J,   K,   X,   DEL, INS, B,   M,   W,   V,   Z,   RSFT, \
-           LCTL,LGUI,LALT,FN2,      BSPC,SPC,      ENT,      FN3, RALT,RGUI,RCTL  ),
+           LCTL,LGUI,LALT,FN2,      BSPC,ENT,      SPC,      FN3, RALT,RGUI,RCTL  ),
 
     // dvorak fn
     // qwerty
