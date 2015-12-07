@@ -3,6 +3,7 @@
 #include "action.h"
 #include "util.h"
 #include "action_layer.h"
+#include "../keyboard/hermes/backlight.h"
 
 #ifdef DEBUG_ACTION
 #include "debug.h"
@@ -10,6 +11,7 @@
 #include "nodebug.h"
 #endif
 
+static void layer_state_set(uint32_t);
 
 /* 
  * Default Layer State
@@ -23,6 +25,8 @@ static void default_layer_state_set(uint32_t state)
     default_layer_state = state;
     default_layer_debug(); debug("\n");
     clear_keyboard_but_mods(); // To avoid stuck keys
+
+    layer_state_set(state);
 }
 
 void default_layer_debug(void)
@@ -64,6 +68,32 @@ static void layer_state_set(uint32_t state)
     layer_state = state;
     layer_debug(); dprintln();
     clear_keyboard_but_mods(); // To avoid stuck keys
+
+    // find highest set bit and set LED color appropriately
+    uint8_t activeLayer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
+    //print("active layer is "); print_dec(activeLayer); print("\n");
+
+    switch(activeLayer) {
+        case 0:
+            // dvorak
+            backlight_set(6, 255, 255);
+            break;
+        case 1:
+            // dvorak fn
+            backlight_set(6, 255, 78);
+            break;
+        case 2:
+            // qwerty
+            backlight_set(255, 6, 6);
+            break;
+        case 3:
+            // qwerty fn
+            backlight_set(255, 78, 6);
+            break;
+        default:
+            backlight_set(255, 255, 255);
+            break;
+    }
 }
 
 void layer_clear(void)
@@ -116,7 +146,6 @@ action_t layer_switch_get_action(keypos_t key)
 {
     action_t action;
     action.code = ACTION_TRANSPARENT;
-
 #ifndef NO_ACTION_LAYER
     uint32_t layers = layer_state | default_layer_state;
     /* check top layer first */

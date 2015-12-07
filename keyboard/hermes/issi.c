@@ -74,7 +74,7 @@ void issi_init(void) {
     //print("Sending initial config.\n");
     issi_send_data(initLedControl, sizeof(initLedControl), 0);
     issi_send_data(initLedBlink, sizeof(initLedBlink), 0);
-    issi_send_data(initLedPwm, sizeof(initLedPwm), 0);
+    //issi_send_data(initLedPwm, sizeof(initLedPwm), 0);
 
     //print("Clearing shutdown bit.\n");
     issi_send_data(clearShutdownBit, 3, 0x0B);
