@@ -71,24 +71,17 @@ static void layer_state_set(uint32_t state)
 
     // find highest set bit and set LED color appropriately
     uint8_t activeLayer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
-    //print("active layer is "); print_dec(activeLayer); print("\n");
 
     switch(activeLayer) {
         case 0:
+        case 1:
             // dvorak
             backlight_set(6, 255, 255);
             break;
-        case 1:
-            // dvorak fn
-            backlight_set(6, 255, 78);
-            break;
         case 2:
+        case 3:
             // qwerty
             backlight_set(255, 6, 6);
-            break;
-        case 3:
-            // qwerty fn
-            backlight_set(255, 78, 6);
             break;
         default:
             backlight_set(255, 255, 255);
