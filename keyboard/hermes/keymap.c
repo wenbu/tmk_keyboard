@@ -19,7 +19,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LCTL,LGUI,LALT,DVFN,     BSPC,ENT,      SPC,      DVFN,RALT,RGUI,RCTL  ),
 
     // dvorak fn
-    KEYMAP(NO,  F1,  F2,  F3,  F4,  F5,  NO,  NO,  F6,  F7,  F8,  F9,  F10, NO,   \
+    KEYMAP(BTLD,F1,  F2,  F3,  F4,  F5,  NO,  NO,  F6,  F7,  F8,  F9,  F10, NO,   \
            NO,  NO,  NO,  UP,  NO,  NO,  NO,  NO,  NO,  NO,  EQL, LBRC,RBRC,BSLS, \
            NO,  NO,  LEFT,DOWN,RGHT,NO,  NO,  NO,  NO,  NO,  NO,  LCBR,RCBR,PIPE, \
            TRNS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  TRNS, \
@@ -33,7 +33,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            TRNS,TRNS,TRNS,QWFN,     TRNS,TRNS,     TRNS,     QWFN,TRNS,TRNS,TRNS  ),
 
     // qwerty fn
-    KEYMAP(NO,  F1,  F2,  F3,  F4,  F5,  NO,  NO,  F6,  F7,  F8,  F9,  F10, NO,   \
+    KEYMAP(BTLD,F1,  F2,  F3,  F4,  F5,  NO,  NO,  F6,  F7,  F8,  F9,  F10, NO,   \
            NO,  NO,  NO,  UP,  NO,  NO,  NO,  NO,  NO,  NO,  EQL, LBRC,RBRC,BSLS, \
            NO,  NO,  LEFT,DOWN,RGHT,NO,  NO,  NO,  NO,  NO,  NO,  LCBR,RCBR,PIPE, \
            TRNS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  TRNS, \
