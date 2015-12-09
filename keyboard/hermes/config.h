@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Ben Wu
 #define PRODUCT         Hermes
-#define DESCRIPTION     t.m.k. keyboard firmware for GH60
+#define DESCRIPTION     t.m.k. keyboard firmware for Hermes
 
 /* key matrix size */
 #define MATRIX_ROWS 14
@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define BACKLIGHT_LEVELS 3
+#define BACKLIGHT_LEVELS 4
 
 /* key combination for command */
 #define IS_COMMAND() ( \

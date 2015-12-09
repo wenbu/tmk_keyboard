@@ -49,17 +49,12 @@ TARGET_DIR = .
 
 # project specific files
 SRC =	keymap_common.c \
+		keymap.c \
 		matrix.c \
-        led.c \
+		led.c \
+		backlight.c \
+		issi.c \
         i2c_soft.c \
-        issi.c \
-        backlight.c 
-
-ifdef KEYMAP
-    SRC := keymap_$(KEYMAP).c $(SRC)
-else
-    SRC := keymap_poker.c $(SRC)
-endif
 
 CONFIG_H = config.h
 
