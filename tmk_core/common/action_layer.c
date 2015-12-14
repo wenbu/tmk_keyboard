@@ -83,6 +83,10 @@ static void layer_state_set(uint32_t state)
             // qwerty
             backlight_set(255, 6, 6);
             break;
+        case 4:
+            // mouse
+            backlight_set(6, 255, 6);
+            break;
         default:
             backlight_set(255, 255, 255);
             break;
