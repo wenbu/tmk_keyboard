@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define BACKLIGHT_LEVELS 4
+#define BACKLIGHT_LEVELS 3
 
 /* key combination for command */
 #define IS_COMMAND() ( \
