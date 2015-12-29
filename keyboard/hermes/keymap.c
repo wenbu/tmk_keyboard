@@ -42,11 +42,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            TRNS,TRNS,TRNS,QWFN,     TRNS,TRNS,     TRNS,     NO,  TRNS,TRNS,TRNS  ),
 
     // mouse
-    KEYMAP(NO,  NO,  NO,  NO,  NO,  NO,  NO,  TRNS,NO,  NO,  NO,  NO,  NO,  NO,   \
-           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  BTN3,MS_U,NO,  WH_U,NO,   \
-           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  MS_L,MS_D,MS_R,WH_D,NO,   \
-           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,   \
-           NO,  NO,  NO,  NO,       NO,  BTN2,     BTN1,     MOUS,NO,  NO,  NO    ),
+    KEYMAP(ESC, 1,   2,   3,   4,   5,   NO,  TRNS,NO,  NO,  NO,  NO,  NO,  NO,   \
+           TAB, Q,   W,   E,   R,   T,   NO,  NO,  NO,  BTN3,MS_U,NO,  WH_U,NO,   \
+           GRV, A,   S,   D,   F,   G,   NO,  NO,  NO,  MS_L,MS_D,MS_R,WH_D,NO,   \
+           LSFT,Z,   X,   C,   V,   B,   NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,   \
+           TRNS,TRNS,TRNS,NO,       NO,  BTN2,     BTN1,     MOUS,NO,  NO,  NO    ),
     // numpad
     // TODO
 };
