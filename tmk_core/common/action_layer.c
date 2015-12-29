@@ -72,6 +72,8 @@ static void layer_state_set(uint32_t state)
     // find highest set bit and set LED color appropriately
     uint8_t activeLayer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
 
+    // TODO would be nice to add some kind of generic callback instead of
+    // hardcoding backlight actions here
     switch(activeLayer) {
         case 0:
         case 1:
@@ -86,6 +88,10 @@ static void layer_state_set(uint32_t state)
         case 4:
             // mouse
             backlight_set(6, 255, 6);
+            break;
+        case 5:
+            // numpad
+            backlight_set(255, 127, 6);
             break;
         default:
             backlight_set(255, 255, 255);

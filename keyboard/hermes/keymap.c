@@ -47,8 +47,13 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            GRV, A,   S,   D,   F,   G,   NO,  NO,  NO,  MS_L,MS_D,MS_R,WH_D,NO,   \
            LSFT,Z,   X,   C,   V,   B,   NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,   \
            TRNS,TRNS,TRNS,NO,       NO,  BTN2,     BTN1,     MOUS,NO,  NO,  NO    ),
+
     // numpad
-    // TODO
+    KEYMAP(NO,  NO,  NO,  NO,  NO,  NO,  NO,  TRNS,NO,  NLCK,PMNS,PAST,PSLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,  PPLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,  PPLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,  PENT,NO,   \
+           TRNS,TRNS,TRNS,NO,       TRNS,TRNS,     TRNS,     P0,  PDOT,PENT,NO    )
 };
 
 enum function_action {
