@@ -3,7 +3,6 @@
 #include "action.h"
 #include "util.h"
 #include "action_layer.h"
-#include "../keyboard/hermes/backlight.h"
 
 #ifdef DEBUG_ACTION
 #include "debug.h"
@@ -70,27 +69,9 @@ static void layer_state_set(uint32_t state)
     clear_keyboard_but_mods(); // To avoid stuck keys
 
     // find highest set bit and set LED color appropriately
-    uint8_t activeLayer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
+    uint8_t active_layer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
 
-    switch(activeLayer) {
-        case 0:
-        case 1:
-            // dvorak
-            backlight_set(6, 255, 255);
-            break;
-        case 2:
-        case 3:
-            // qwerty
-            backlight_set(255, 6, 6);
-            break;
-        case 4:
-            // mouse
-            backlight_set(6, 255, 6);
-            break;
-        default:
-            backlight_set(255, 255, 255);
-            break;
-    }
+    on_layer_change(active_layer);
 }
 
 void layer_clear(void)
@@ -161,4 +142,9 @@ action_t layer_switch_get_action(keypos_t key)
     action = action_for_key(biton32(default_layer_state), key);
     return action;
 #endif
+}
+
+__attribute__ ((weak))
+void on_layer_change(uint8_t active_layer) {
+    (void) active_layer;
 }

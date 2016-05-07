@@ -56,6 +56,8 @@ void layer_invert(uint8_t layer);
 void layer_or(uint32_t state);
 void layer_and(uint32_t state);
 void layer_xor(uint32_t state);
+
+void on_layer_change(uint8_t active_layer);
 #else
 #define layer_state             0
 #define layer_clear()
@@ -68,6 +70,8 @@ void layer_xor(uint32_t state);
 #define layer_and(state)
 #define layer_xor(state)
 #define layer_debug()
+
+#define on_layer_change(layer)
 #endif
 
 

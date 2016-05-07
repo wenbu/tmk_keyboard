@@ -51,6 +51,28 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // TODO
 };
 
+void on_layer_change(uint8_t active_layer) {
+  switch(active_layer) {
+        case 0:
+        case 1:
+            // dvorak
+            backlight_set(6, 255, 255);
+            break;
+        case 2:
+        case 3:
+            // qwerty
+            backlight_set(255, 6, 6);
+            break;
+        case 4:
+            // mouse
+            backlight_set(6, 255, 6);
+            break;
+        default:
+            backlight_set(255, 255, 255);
+            break;
+    }
+}
+
 enum function_action {
     BACKLIGHT_BRIGHTNESS
 };
