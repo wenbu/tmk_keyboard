@@ -36,18 +36,7 @@ static void backlight_refresh() {
     uint8_t r = backlight_state.color.r * brightnessFactor / 255;
     uint8_t g = backlight_state.color.g * brightnessFactor / 255;
     uint8_t b = backlight_state.color.b * brightnessFactor / 255;
-    /*
-    print("r = "); print_dec(backlight_state.color.r);
-    print("; g = "); print_dec(backlight_state.color.g);
-    print("; b = "); print_dec(backlight_state.color.b);
-    print("\n");
 
-    print("brightness = "); print_dec(backlight_state.brightness);
-    print("/"); print_dec(BACKLIGHT_LEVELS); print("\n");
-    print("brightness factor:         "); print_dec(brightness_lut[backlight_state.brightness]); print("\n");
-    print("brightness factor (gamma): "); print_dec(brightnessFactor); print("\n");
-    print("computed color: "); print_dec(r); print(" "); print_dec(g); print(" "); print_dec(b); print("\n");
-    */
     uint8_t rData[9] = { DEVICE_ADDRESS_WRITE, 0x34, r, r, r, r, r, r, r };
     uint8_t gData[9] = { DEVICE_ADDRESS_WRITE, 0x44, g, g, g, g, g, g, g };
     uint8_t bData[9] = { DEVICE_ADDRESS_WRITE, 0x24, b, b, b, b, b, b, b };
@@ -58,7 +47,6 @@ static void backlight_refresh() {
 }
 
 void backlight_set(uint8_t r, uint8_t g, uint8_t b) {
-    //print("Setting color to ("); phex(r); print(" "); phex(g); print(" "); phex(b); print(")\n");
     if (backlight_state.color.r == r && backlight_state.color.g == g && backlight_state.color.b == b) {
         return;
     } else {

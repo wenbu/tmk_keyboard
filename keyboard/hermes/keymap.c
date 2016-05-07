@@ -48,7 +48,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,   \
            NO,  NO,  NO,  NO,       NO,  BTN2,     BTN1,     MOUS,NO,  NO,  NO    ),
     // numpad
-    // TODO
+    KEYMAP(NO,  NO,  NO,  NO,  NO,  NO,  NO,  TRNS,NO,  NLCK,PMNS,PAST,PSLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P7,  P8,  P9,  PPLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P4,  P5,  P6,  PPLS,NO,   \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  P1,  P2,  P3,  PENT,NO,   \
+           TRNS,TRNS,TRNS,NO,       TRNS,TRNS,     TRNS,     P0,  PDOT,PENT,NO    )
 };
 
 void on_layer_change(uint8_t active_layer) {
