@@ -5,5 +5,7 @@ void backlight_init(void);
 
 void backlight_set(uint8_t, uint8_t, uint8_t);
 
+void backlight_set_array(uint8_t*, uint8_t*, uint8_t*);
+
 void backlight_adjust(void);
 #endif

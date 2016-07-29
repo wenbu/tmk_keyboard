@@ -56,25 +56,45 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 void on_layer_change(uint8_t active_layer) {
+  uint8_t* r;
+  uint8_t* g;
+  uint8_t* b;
   switch(active_layer) {
         case 0:
-        case 1:
             // dvorak
-            backlight_set(6, 255, 255);
+            r = (uint8_t[7]) {   2,  12,  24,  48,  24,  12,   2 };
+            g = (uint8_t[7]) {  32,  64, 128, 255, 128,  64,  32 };
+            b = (uint8_t[7]) {  64, 128, 192, 255, 192, 128,  64 };
+            break;
+        case 1:
+            // dvorak fn
+            r = (uint8_t[7]) {   2,  12,  64, 255,  64,  12,   2 };
+            g = (uint8_t[7]) {  32,  64, 255, 255, 255,  64,  32 };
+            b = (uint8_t[7]) {  64, 128, 255, 255, 255, 128,  64 };
             break;
         case 2:
-        case 3:
             // qwerty
-            backlight_set(255, 6, 6);
+            r = (uint8_t[7]) {  64, 128, 192, 255, 192, 128,  64 };
+            g = (uint8_t[7]) {   2,   3,   3,   4,   3,   3,   2 };
+            b = (uint8_t[7]) {   2,   3,   3,   4,   3,   3,   2 };
+            break;
+        case 3:
+            // qwerty fn
+            r = (uint8_t[7]) {  64, 128, 192, 255, 192, 128,  64 };
+            g = (uint8_t[7]) {   2,  16,  64, 128,  64,  16,   2 };
+            b = (uint8_t[7]) {   2,   3,   3,   4,   3,   3,   2 };
             break;
         case 4:
             // mouse
-            backlight_set(6, 255, 6);
+            r = (uint8_t[7]) {   2,  16,  64, 128,  64,  16,   2 };
+            g = (uint8_t[7]) {  64, 128, 255, 255, 255, 128,  64 };
+            b = (uint8_t[7]) {   2,   3,   6,   6,   6,   3,   2 };
             break;
         default:
             backlight_set(255, 255, 255);
             break;
     }
+    backlight_set_array(r, g, b);
 }
 
 enum function_action {
