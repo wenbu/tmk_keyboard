@@ -1,6 +1,7 @@
 #include "keymap_common.h"
 #include "action_layer.h"
 #include "backlight.h"
+#include "print.h"
 
 #define KC_DVQW KC_FN0
 #define KC_LCBR KC_FN1
@@ -92,7 +93,7 @@ void on_layer_change(uint8_t active_layer) {
             break;
         default:
             backlight_set(255, 255, 255);
-            break;
+            return;
     }
     backlight_set_array(r, g, b);
 }

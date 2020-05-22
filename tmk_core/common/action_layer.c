@@ -68,10 +68,13 @@ static void layer_state_set(uint32_t state)
     layer_debug(); dprintln();
     clear_keyboard_but_mods(); // To avoid stuck keys
 
-    // find highest set bit and set LED color appropriately
-    uint8_t active_layer = 32 - __builtin_clzl(layer_state | default_layer_state) - 1;
-
-    on_layer_change(active_layer);
+    if (layer_state == 0) {
+        on_layer_change(0);
+    } else {
+        // find highest set bit and set LED color appropriately
+        uint8_t active_layer = 32 - __builtin_clzl(layer_state) - 1;
+        on_layer_change(active_layer);
+    } 
 }
 
 void layer_clear(void)
